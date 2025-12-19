@@ -1,0 +1,47 @@
+# file sys
+alias ls='ls --color=auto'
+alias lss='eza -lh --group-directories-first'
+alias lsa='lss -a'
+alias lt='eza --tree --level=2 --long --git'
+alias lta='lt -a'
+alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
+alias cd="zd"
+
+zd() {
+  if [ $# -eq 0 ]; then
+    builtin cd ~ && return
+  elif [ -d "$1" ]; then
+    builtin cd "$1"
+  else
+    z "$@" && printf "\U000F17A9 " && pwd || echo "Error: Directory not found"
+  fi
+}
+open() {
+  xdg-open "$@" >/dev/null 2>&1 &
+}
+
+# system
+alias grep='grep --color'
+alias cp='cp -i'
+alias mv='mv -i'
+alias df="df -h"
+
+# git 
+alias gs="git status"
+alias gc="git commit"
+
+# direc
+alias c="cd Desktop"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# misc
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+alias mergepdf='magick -density 300 -quality 100 *.pdf _merged.pdf'
+alias convertfile='magick -quality 100'//convertfile input.png output.jpg
+alias mirrorsite='wget --tries=3 --timeout=10 --no-check-certificate --user="$1" --ask-password -m -k -K -E -e robots=off'
+alias weather='curl wttr.in/hongkong'
+
+
