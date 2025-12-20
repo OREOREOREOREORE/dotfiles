@@ -1,7 +1,11 @@
 vim.g.mapleader = " " 
 
-vim.cmd(":hi statusline guibg=NONE")
-
-require('config.gset')
+-- config
+require('config.opts')
 require('config.kmap')
+
+-- plugins
+require('plugins.lazy')
+require('plugins.kmaps')
+require('plugins.opts')
 
