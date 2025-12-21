@@ -1,4 +1,4 @@
-vim.g.mapleader = " " 
+vim.g.mapleader = " "
 
 -- config
 require('config.opts')
@@ -8,4 +8,3 @@ require('config.kmap')
 require('plugins.lazy')
 require('plugins.kmaps')
 require('plugins.opts')
-
