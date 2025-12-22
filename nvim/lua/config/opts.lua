@@ -34,5 +34,4 @@ vim.opt.autowrite = false
 -- behavior settings
 vim.o.encoding = "UTF-8"
 
-vim.cmd(":hi statusline guibg=NONE")
-
+vim.cmd(":hi istatusline guibg=NONE")

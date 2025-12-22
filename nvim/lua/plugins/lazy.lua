@@ -46,6 +46,10 @@ require('Lazy').setup({
 	},
 
 	{
+	  'lewis6991/gitsigns.nvim',
+	},
+
+	{
 		import = "plugins.src"
 	}
 })
