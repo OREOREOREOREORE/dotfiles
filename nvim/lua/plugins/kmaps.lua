@@ -7,7 +7,9 @@ vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>")
 -- buffers
 vim.keymap.set("n", "<leader>n", ":bn<cr>")
 vim.keymap.set("n", "<leader>p", ":bp<cr>")
-vim.keymap.set("n", "<C-w>", ":bd<cr>")
+--vim.keymap.set("n", "<leader>x", ":bd<cr>")
 
 -- format code using LSP
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
+
+
