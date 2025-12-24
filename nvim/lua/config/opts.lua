@@ -8,7 +8,7 @@ vim.opt.swapfile = false
 -- Indentation
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
-vim.o.shiftwidth = 3
+vim.o.shiftwidth = 4
 vim.o.autoindent = true
 vim.smartindent = true
 
