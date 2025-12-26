@@ -31,19 +31,6 @@ require('Lazy').setup({
 		version = "*",
 		dependencies = 'nvim-tree/nvim-web-devicons'
 	},
-	{
-		'rmagatti/auto-session',
-		lazy = false,
-		init = function()
-			vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-	    end,
-		---enables autocomplete for opts
-		---@module "auto-session"
-		---@type AutoSession.Config
-		opts = {
-			suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-		},
-	},
 
 	{
 	  'lewis6991/gitsigns.nvim',

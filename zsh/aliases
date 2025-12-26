@@ -46,4 +46,5 @@ alias convertfile='magick -quality 100'//convertfile input.png output.jpg
 alias mirrorsite='wget --tries=3 --timeout=10 --no-check-certificate --user="$1" --ask-password -m -k -K -E -e robots=off'
 alias weather='curl wttr.in/hongkong'
 
-
+# compiler
+alias g='g++ -std=c++17'
