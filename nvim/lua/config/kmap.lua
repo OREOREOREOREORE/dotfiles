@@ -26,5 +26,8 @@ vim.keymap.set("n" ,'<leader>e', ':Explore<CR>')
 vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
-
+-- window splitting/Resizing
+vim.keymap.set('n', '<leader>sv', ':vsplit<CR>')
+vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>')
+vim.keymap.set('n', '<C-h>', ':vertical resize -2<CR>')
 
