@@ -1,3 +1,4 @@
+-- https://cmp.saghen.dev/installation
 return {
 	{
 		{
@@ -9,24 +10,20 @@ return {
 			---@module 'blink.cmp'
 			---@type blink.cmp.Config
 			opts = {
-				-- All presets have the following mappings:
-				-- C-space: Open menu or open docs if already open
-				-- C-n/C-p or Up/Down: Select next/previous item
-				-- C-e: Hide menu
-				-- C-k: Toggle signature help (if signature.enabled = true)
-				--
-				-- See :h blink-cmp-config-keymap for defining your own keymap
-				keymap = { 
-					preset = 'default',
+				keymap = {
+					preset = 'default', -- C-y
 				},
 
 				appearance = {
 					nerd_font_variant = 'mono'
 				},
 
-				-- (Default) Only show the documentation popup when manually triggered
-				completion = { 
-					documentation = { auto_show = true },
+				completion = {
+					documentation = {
+						auto_show = true,
+						border = 'rounder';
+					},
+
 					trigger = {
 						show_on_trigger_character = true,
 					},
@@ -37,9 +34,6 @@ return {
 				},
 
 				window = {
-					documentation = {
-						border = 'rounded',
-					},
 					signature_help = {
 						border = 'rounded',
 						show_documentation = true,

@@ -17,9 +17,9 @@ zd() {
   fi
 }
 
-open() {
-  xdg-open "$@" >/dev/null 2>&1 &
-}
+# open() {
+#   xdg-open "$@" >/dev/null 2>&1 &
+# }
 
 # system
 alias grep='grep --color'

@@ -13,3 +13,8 @@ vim.keymap.set("n", "<A-[>", ":bp<cr>")
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
 
 
+-- mini
+vim.keymap.set("n", "<leader>/", function()
+	require("mini.comment").toggle_current_line()
+end)
+
