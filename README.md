@@ -1,1 +1,3 @@
-I hate writting so called bullshit, so NO.
+dotfiles
+
+just a dotfile.
