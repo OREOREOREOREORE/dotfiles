@@ -1,6 +1,6 @@
 # file sys
 alias ls='ls --color=auto'
-alias lss='eza -lh --group-directories-first'
+alias l='eza -lah --group-directories-first'
 alias lsa='lss -a'
 alias lt='eza --tree --level=2 --long --git'
 alias lta='lt -a'

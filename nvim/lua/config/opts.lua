@@ -1,9 +1,10 @@
-
 -- Basic settings
-vim.wo.number = true
-vim.wo.relativenumber = true
-vim.opt.wrap = false
+vim.wo.number = false
+vim.wo.relativenumber = false
+vim.opt.wrap = true
 vim.opt.swapfile = false
+vim.opt.cursorline = true
+vim.opt.showmode = false
 
 -- Indentation
 vim.o.tabstop = 2
@@ -33,5 +34,10 @@ vim.opt.autowrite = false
 
 -- behavior settings
 vim.o.encoding = "UTF-8"
+vim.otermguicolors = true
 
-vim.cmd(":hi istatusline guibg=NONE")
+-- cursor settings
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+
+
+-- vim.cmd(":hi istatusline guibg=NONE")

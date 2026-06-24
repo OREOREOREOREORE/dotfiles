@@ -19,7 +19,10 @@ return {
 			local capabilities = require('blink.cmp').get_lsp_capabilities()
       vim.lsp.config('lua_ls', { capabilities = capabilities })
       vim.lsp.config('clangd', { capabilities = capabilities })
-      vim.lsp.enable({ 'lua_ls', 'clangd' })
+			vim.lsp.config('pyright', { capabilities = capabilities })
+			vim.lsp.config('r_language_server', { capabilities = capabilities })
+			vim.lsp.config('tinymist', { capabilities = capabilities })
+      vim.lsp.enable({ 'lua_ls', 'clangd', 'pyright', 'r_language_server', 'tinymist' })
 		end,
 	},
 }

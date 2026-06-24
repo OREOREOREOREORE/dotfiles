@@ -12,6 +12,9 @@ vim.keymap.set("n", "<A-[>", ":bp<cr>")
 -- format code using LSP
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
 
+-- Copilot
+vim.keymap.set("n", "<leader>c", ":Copilot disable<cr>")
+
 
 -- mini
 vim.keymap.set("n", "<leader>/", function()

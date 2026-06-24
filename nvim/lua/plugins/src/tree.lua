@@ -1,22 +1,17 @@
-local languages = {'lua', 'cpp', 'c', 'python', 'javascript', 'typescript', 'html', 'css', 'json', 'bash', 'java', 'go', 'rust'}
-
 return {
-	{
-		'nvim-treesitter/nvim-treesitter',
-		branch = 'main',
-		build = ':TSUpdate',
-		event = { 'BufReadPost', 'BufNewFile' },
-	  auto_install = true,
-		sync_install = false,
+	'nvim-treesitter/nvim-treesitter',
+	branch= "main",
+	lazy = false,
+	build = ':TSUpdate',
+
+	ensure_installed = {'html', 'css', 'javascript', 'lua', 'python', 'bash', 'cpp', 'c', "rust", "go", "json", "typsscript", "vim", "vimdoc", "markdown"},
+
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
 	},
 
-  {
-		'MeanderingProgrammer/treesitter-modules.nvim',
-		dependencies = { 'nvim-treesitter/nvim-treesitter' },
-		opts = {
-			ensure_installed = languages,
-			highlight = { enable = true },
-			indent = { enable = true },
-		},
+	indent = {
+		enable = true,
 	},
 }

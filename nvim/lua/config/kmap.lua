@@ -25,12 +25,24 @@ vim.keymap.set('v', '>', '>gv')
 
 -- window splitting/Resizing
 vim.keymap.set('n', '<leader>sv', ':vsplit<CR>')
-vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>')
-vim.keymap.set('n', '<C-h>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<A-Right>', ':vertical resize +2<CR>')
+vim.keymap.set('n', '<A-Left>', ':vertical resize -2<CR>')
+
+-- Better window navigation
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- yank to clipboard
 vim.keymap.set({'n', 'v'}, "<leader>y", [["+y ]])
---vim.keymap.set({'n', 'v'}, "<leader+C>p", [["+p ]])
+vim.keymap.set({'n', 'v'}, "<leader>d", '"_d"', {desc = "Delete without copying to clipboard"})
+
+-- better movement in wrapped text
+vim.keymap.set("n", "j", function()
+	return vim.v.count == 0 and "gj" or "j"
+end, { expr = true, silent = true, desc = "Down (wrap-aware)" })
+vim.keymap.set("n", "k", function()
+	return vim.v.count == 0 and "gk" or "k"
+end, { expr = true, silent = true, desc = "Up (wrap-aware)" })
 
 -- floating terminal
 local termainl_state = {

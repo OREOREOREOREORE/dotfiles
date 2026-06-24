@@ -3,7 +3,7 @@ return {
 	{
 		{
 			'saghen/blink.cmp',
-			dependencies = { 'rafamadriz/friendly-snippets' },
+			dependencies = { 'rafamadriz/friendly-snippets', 'echasnovski/mini.snippets'},
 
 			version = '1.*',
 
@@ -11,7 +11,7 @@ return {
 			---@type blink.cmp.Config
 			opts = {
 				keymap = {
-					preset = 'default', -- C-y
+					preset = 'super-tab', -- C-y
 				},
 
 				appearance = {
@@ -21,27 +21,49 @@ return {
 				completion = {
 					documentation = {
 						auto_show = true,
-						border = 'rounder';
 					},
 
 					trigger = {
 						show_on_trigger_character = true,
 					},
+
+					menu = {
+						draw = {
+							direction_priority = {"n", "s"},
+							treesitter = {'lsp'},
+							components = {
+								kind_icon = {
+									text = function(ctx)
+										local kind_icon, _, _ =
+											require('mini.icons').get("lsp", ctx.kind)
+										return kind_icon
+									end,
+									highlight = function(ctx)
+										local _, hl, _ = require('mini.icons').get("lsp", ctx.kind)
+										return hl
+									end,
+								},
+								kind = {
+									highlight = function(ctx)
+										local _, hl, _ = require('mini.icons').get("lsp", ctx.kind)
+										return hl
+									end,
+								}
+							}
+						}
+					}
 				},
+
+				snippets = {preset = 'default'},
 
 				signature = {
 					enabled = true,
 				},
 
-				window = {
-					signature_help = {
-						border = 'rounded',
-						show_documentation = true,
-					}
-				},
 
 				fuzzy = { implementation = "prefer_rust_with_warning" }
 			},
+			opts_extend = { "sources.default" },
 		}
 	}
 }
