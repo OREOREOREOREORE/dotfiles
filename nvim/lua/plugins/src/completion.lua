@@ -1,11 +1,16 @@
 -- https://cmp.saghen.dev/installation
-return {
-	{
-		{
-			'saghen/blink.cmp',
-			dependencies = { 'rafamadriz/friendly-snippets', 'echasnovski/mini.snippets'},
+return { 'saghen/blink.cmp',
+			dependencies = { 
+				'saghen/blink.lib',
+				'rafamadriz/friendly-snippets', 
+				'echasnovski/mini.snippets'
+			},
 
-			version = '1.*',
+			version = "1.*",
+
+			build = function()
+				require('blink.cmp').build():pwait()
+			end,
 
 			---@module 'blink.cmp'
 			---@type blink.cmp.Config
@@ -27,9 +32,11 @@ return {
 						show_on_trigger_character = true,
 					},
 
+
 					menu = {
+						direction_priority = {"n", "s"},
+
 						draw = {
-							direction_priority = {"n", "s"},
 							treesitter = {'lsp'},
 							components = {
 								kind_icon = {
@@ -54,6 +61,14 @@ return {
 					}
 				},
 
+				sources = {
+					default = {
+						'lsp',
+						'path',
+						'buffer',
+					}
+				},
+
 				snippets = {preset = 'default'},
 
 				signature = {
@@ -61,11 +76,10 @@ return {
 				},
 
 
-				fuzzy = { implementation = "prefer_rust_with_warning" }
+				fuzzy = { implementation = "rust" }
 			},
 			opts_extend = { "sources.default" },
-		}
-	}
+	
 }
 
 

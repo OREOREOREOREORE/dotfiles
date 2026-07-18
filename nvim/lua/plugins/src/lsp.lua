@@ -22,7 +22,12 @@ return {
 			vim.lsp.config('pyright', { capabilities = capabilities })
 			vim.lsp.config('r_language_server', { capabilities = capabilities })
 			vim.lsp.config('tinymist', { capabilities = capabilities })
-      vim.lsp.enable({ 'lua_ls', 'clangd', 'pyright', 'r_language_server', 'tinymist' })
+			vim.lsp.config('rust_analyzer', { capabilities = capabilities })
+			vim.lsp.config('ts_ls', { capabilities = capabilities })
+			vim.lsp.config('gopls', { capabilities = capabilities })
+      vim.lsp.enable({ 'lua_ls', 'clangd', 'pyright', 
+											 'r_language_server', 'tinymist' , 'rust_analyzer', 
+											 'ts_ls', 'gopls' })
 		end,
 	},
 }

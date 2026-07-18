@@ -4,14 +4,12 @@ return {
 	lazy = false,
 	build = ':TSUpdate',
 
-	ensure_installed = {'html', 'css', 'javascript', 'lua', 'python', 'bash', 'cpp', 'c', "rust", "go", "json", "typsscript", "vim", "vimdoc", "markdown"},
+	config = function()
+		require('nvim-treesitter').setup{
+			install_dir = vim.fn.stdpath('data') .. '/site',
+		}
+	end,
 
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
 
-	indent = {
-		enable = true,
-	},
+
 }
